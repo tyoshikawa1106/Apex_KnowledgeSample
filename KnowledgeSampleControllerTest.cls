@@ -1,6 +1,6 @@
 /*
  * ナレッジ処理のサンプル・テストクラス
- * Copyright (c) Developer 2013
+ * © 2013 Force.com Developer
  * ----------------------------------------
  * @createdDate      : 2013/01/01
  * @createdName      : TAIKI,YOSHIKAWA
