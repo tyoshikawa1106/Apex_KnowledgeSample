@@ -26,17 +26,14 @@ public with sharing class KnowledgeSampleController {
 	public Knowledge__kav createKnowledge() {
 		System.debug('◆◆◆◆createKnowledge:START');
 		
-		Knowledge__kav objKnowledge = new Knowledge__kav();
-		// URL 名
-		objKnowledge.UrlName = 'UrlName';
-		// タイトル
-		objKnowledge.Title = 'Title';
-		// 概要
-		objKnowledge.Summary = 'Summary	';
-		// 言語
-		objKnowledge.Language = 'ja';
-		// INSERT
-		insert objKnowledge;
+		Knowledge__kav knowledge = new Knowledge__kav(
+			 UrlName = 'UrlName'
+			,Title = 'Title'
+			,Summary = 'Summary'
+			,Language = 'ja'
+		);
+		
+		insert knowledge;
 		
 		System.debug('◆◆◆◆createKnowledge:END');
 		return null;
@@ -50,7 +47,7 @@ public with sharing class KnowledgeSampleController {
 	public Knowledge__kav getKnowledgeIsDraft() {
 		return [
 			select
-				Id
+				 Id
 				,UrlName
 				,Title
 				,Summary
@@ -90,7 +87,7 @@ public with sharing class KnowledgeSampleController {
 	public Knowledge__kav getKnowledgeIsOnline() {
 		return [
 			select
-				Id
+				 Id
 				,UrlName
 				,Title
 				,Summary
@@ -130,7 +127,7 @@ public with sharing class KnowledgeSampleController {
 	public Knowledge__kav getKnowledgeIsArchived() {
 		return [
 			select
-				Id
+				 Id
 				,UrlName
 				,Title
 				,Summary

@@ -1,5 +1,5 @@
 /*
- * ナレッジ処理のサンプル・テストクラス
+ * ナレッジ処理のサンプル・コントローラーテストクラス
  * © 2013 Force.com Developer
  * ----------------------------------------
  * @createdDate      : 2013/01/01
@@ -19,10 +19,10 @@ private class KnowledgeSampleControllerTest {
         System.debug('◆◆◆◆KnowledgeSampleControllerTest:START');
         
         // ユーザ取得
-        User objUser = getUser();
+        User user = getUser();
         
         // テスト実施
-        System.RunAs(objUser) {
+        System.RunAs(user) {
             
             // カレントページにパラメータを設定
             PageReference pageRef = getPageReference();
@@ -48,10 +48,10 @@ private class KnowledgeSampleControllerTest {
         System.debug('◆◆◆◆createKnowledgeTest:START');
         
         // ユーザ取得
-        User objUser = getUser();
+        User user = getUser();
         
         // テスト実施
-        System.RunAs(objUser) {
+        System.RunAs(user) {
             
             // カレントページにパラメータを設定
             PageReference pageRef = getPageReference();
@@ -64,8 +64,8 @@ private class KnowledgeSampleControllerTest {
             Test.startTest();
             
             // Knowledgeのデータ作成
-            Knowledge__kav objKnowledge = cls.createKnowledge();
-            System.assertNotEquals(objKnowledge, new Knowledge__kav());
+            Knowledge__kav knowledge = cls.createKnowledge();
+            System.assertNotEquals(knowledge, new Knowledge__kav());
             
             // テスト終了
             Test.stopTest();
@@ -81,10 +81,10 @@ private class KnowledgeSampleControllerTest {
         System.debug('◆◆◆◆getKnowledgeTest:START');
         
         // ユーザ取得
-        User objUser = getUser();
+        User user = getUser();
         
         // テスト実施
-        System.RunAs(objUser) {
+        System.RunAs(user) {
             
             // カレントページにパラメータを設定
             PageReference pageRef = getPageReference();
@@ -93,14 +93,14 @@ private class KnowledgeSampleControllerTest {
             // コンストラクタ
             KnowledgeSampleController cls = new KnowledgeSampleController();
             // Knowledgeのデータ作成
-            Knowledge__kav objKnowledge = cls.createKnowledge();
+            Knowledge__kav knowledge = cls.createKnowledge();
             
             // テスト開始
             Test.startTest();
             
             // Knowledgeのデータ取得
-            Knowledge__kav objKnowledgeDraft = cls.getKnowledgeIsDraft();
-            System.assertEquals(objKnowledgeDraft.PublishStatus, 'Draft');
+            Knowledge__kav knowledgeDraft = cls.getKnowledgeIsDraft();
+            System.assertEquals(knowledgeDraft.PublishStatus, 'Draft');
             
             // テスト終了
             Test.stopTest();
@@ -116,10 +116,10 @@ private class KnowledgeSampleControllerTest {
         System.debug('◆◆◆◆doUpdateKnowledgeOnlineTest:START');
         
         // ユーザ取得
-        User objUser = getUser();
+        User user = getUser();
         
         // テスト実施
-        System.RunAs(objUser) {
+        System.RunAs(user) {
             
             // カレントページにパラメータを設定
             PageReference pageRef = getPageReference();
@@ -128,16 +128,16 @@ private class KnowledgeSampleControllerTest {
             // コンストラクタ
             KnowledgeSampleController cls = new KnowledgeSampleController();
             // Knowledgeのデータ作成
-            Knowledge__kav objKnowledge = cls.createKnowledge();
+            Knowledge__kav knowledge = cls.createKnowledge();
             // Knowledgeのデータ取得
-            Knowledge__kav objKnowledgeDraft = cls.getKnowledgeIsDraft();
-            System.assertEquals(objKnowledgeDraft.PublishStatus, 'Draft');
+            Knowledge__kav knowledgeDraft = cls.getKnowledgeIsDraft();
+            System.assertEquals(knowledgeDraft.PublishStatus, 'Draft');
             
             // テスト開始
             Test.startTest();
             
             // Knowledgeの更新(Online)
-            cls.doUpdateKnowledgeOnline(objKnowledgeDraft);
+            cls.doUpdateKnowledgeOnline(knowledgeDraft);
             
             // テスト終了
             Test.stopTest();
@@ -153,10 +153,10 @@ private class KnowledgeSampleControllerTest {
         System.debug('◆◆◆◆getKnowledgeIsOnlineTest:START');
         
         // ユーザ取得
-        User objUser = getUser();
+        User user = getUser();
         
         // テスト実施
-        System.RunAs(objUser) {
+        System.RunAs(user) {
             
             // カレントページにパラメータを設定
             PageReference pageRef = getPageReference();
@@ -165,19 +165,19 @@ private class KnowledgeSampleControllerTest {
             // コンストラクタ
             KnowledgeSampleController cls = new KnowledgeSampleController();
             // Knowledgeのデータ作成
-            Knowledge__kav objKnowledge = cls.createKnowledge();
+            Knowledge__kav knowledge = cls.createKnowledge();
             // Knowledgeのデータ取得(Draft)
-            Knowledge__kav objKnowledgeDraft = cls.getKnowledgeIsDraft();
-            System.assertEquals(objKnowledgeDraft.PublishStatus, 'Draft');
+            Knowledge__kav knowledgeDraft = cls.getKnowledgeIsDraft();
+            System.assertEquals(knowledgeDraft.PublishStatus, 'Draft');
             // Knowledgeの更新(Online)
-            cls.doUpdateKnowledgeOnline(objKnowledgeDraft);
+            cls.doUpdateKnowledgeOnline(knowledgeDraft);
             
             // テスト開始
             Test.startTest();
             
             // Knowledgeのデータ取得(Online)
-            Knowledge__kav objKnowledgeOnline = cls.getKnowledgeIsOnline();
-            System.assertEquals(objKnowledgeOnline.PublishStatus, 'Online');
+            Knowledge__kav knowledgeOnline = cls.getKnowledgeIsOnline();
+            System.assertEquals(knowledgeOnline.PublishStatus, 'Online');
             
             // テスト終了
             Test.stopTest();
@@ -193,10 +193,10 @@ private class KnowledgeSampleControllerTest {
         System.debug('◆◆◆◆doUpdateKnowledgeArchivedTest:START');
         
         // ユーザ取得
-        User objUser = getUser();
+        User user = getUser();
         
         // テスト実施
-        System.RunAs(objUser) {
+        System.RunAs(user) {
             
             // カレントページにパラメータを設定
             PageReference pageRef = getPageReference();
@@ -205,21 +205,21 @@ private class KnowledgeSampleControllerTest {
             // コンストラクタ
             KnowledgeSampleController cls = new KnowledgeSampleController();
             // Knowledgeのデータ作成
-            Knowledge__kav objKnowledge = cls.createKnowledge();
+            Knowledge__kav knowledge = cls.createKnowledge();
             // Knowledgeのデータ取得
-            Knowledge__kav objKnowledgeDraft = cls.getKnowledgeIsDraft();
-            System.assertEquals(objKnowledgeDraft.PublishStatus, 'Draft');
+            Knowledge__kav knowledgeDraft = cls.getKnowledgeIsDraft();
+            System.assertEquals(knowledgeDraft.PublishStatus, 'Draft');
             // Knowledgeの更新(Online)
-            cls.doUpdateKnowledgeOnline(objKnowledgeDraft);
+            cls.doUpdateKnowledgeOnline(knowledgeDraft);
             // Knowledgeのデータ取得(Online)
-            Knowledge__kav objKnowledgeOnline = cls.getKnowledgeIsOnline();
-            System.assertEquals(objKnowledgeOnline.PublishStatus, 'Online');
+            Knowledge__kav knowledgeOnline = cls.getKnowledgeIsOnline();
+            System.assertEquals(knowledgeOnline.PublishStatus, 'Online');
             
             // テスト開始
             Test.startTest();
             
             // Knowledgeの更新(Archived)
-            cls.doUpdateKnowledgeArchived(objKnowledgeOnline);
+            cls.doUpdateKnowledgeArchived(knowledgeOnline);
             
             // テスト終了
             Test.stopTest();
@@ -235,10 +235,10 @@ private class KnowledgeSampleControllerTest {
         System.debug('◆◆◆◆getKnowledgeIsArchivedTest:START');
         
         // ユーザ取得
-        User objUser = getUser();
+        User user = getUser();
         
         // テスト実施
-        System.RunAs(objUser) {
+        System.RunAs(user) {
             
             // カレントページにパラメータを設定
             PageReference pageRef = getPageReference();
@@ -247,25 +247,25 @@ private class KnowledgeSampleControllerTest {
             // コンストラクタ
             KnowledgeSampleController cls = new KnowledgeSampleController();
             // Knowledgeのデータ作成
-            Knowledge__kav objKnowledge = cls.createKnowledge();
+            Knowledge__kav knowledge = cls.createKnowledge();
             // Knowledgeのデータ取得
-            Knowledge__kav objKnowledgeDraft = cls.getKnowledgeIsDraft();
-            System.assertEquals(objKnowledgeDraft.PublishStatus, 'Draft');
+            Knowledge__kav knowledgeDraft = cls.getKnowledgeIsDraft();
+            System.assertEquals(knowledgeDraft.PublishStatus, 'Draft');
             // Knowledgeの更新(Online)
-            cls.doUpdateKnowledgeOnline(objKnowledgeDraft);
+            cls.doUpdateKnowledgeOnline(knowledgeDraft);
             // Knowledgeのデータ取得(Online)
-            Knowledge__kav objKnowledgeOnline = cls.getKnowledgeIsOnline();
-            System.assertEquals(objKnowledgeOnline.PublishStatus, 'Online');
+            Knowledge__kav knowledgeOnline = cls.getKnowledgeIsOnline();
+            System.assertEquals(knowledgeOnline.PublishStatus, 'Online');
             
             // Knowledgeの更新(Archived)
-            cls.doUpdateKnowledgeArchived(objKnowledgeOnline);
+            cls.doUpdateKnowledgeArchived(knowledgeOnline);
             
             // テスト開始
             Test.startTest();
             
             // Knowledgeのデータ取得(Archived)
-            Knowledge__kav objKnowledgeArchived = cls.getKnowledgeIsArchived();
-            System.assertEquals(objKnowledgeArchived.PublishStatus, 'Archived');
+            Knowledge__kav knowledgeArchived = cls.getKnowledgeIsArchived();
+            System.assertEquals(knowledgeArchived.PublishStatus, 'Archived');
             
             // テスト終了
             Test.stopTest();
