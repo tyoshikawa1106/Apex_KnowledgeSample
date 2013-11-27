@@ -4,6 +4,8 @@ Apex_KnowledgeSample
 ナレッジ処理のサンプルコードです。
 <br/>
 下記リンク先を参考にしています。<br/>
+<br/>
+PublishingService Class<br/>
 http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_classes_knowledge_kbManagement.htm
 <br/>
 - ナレッジを有効にしてある必要があります。
